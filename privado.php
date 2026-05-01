@@ -20,6 +20,9 @@ $resultado = mysqli_query($conexion, $sql);
 <body>
     <h1>Bienvenido, <?php echo $_SESSION["nombre"]; ?></h1>
 
+    <p><a href="mis_compras.php">Ver mis compras</a></p>
+
+
     <h2>Listado de pisos disponibles</h2>
 
     <?php while($fila = mysqli_fetch_assoc($resultado)): ?>
