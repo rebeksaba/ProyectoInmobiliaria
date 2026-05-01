@@ -8,8 +8,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST["correo"];
     $clave = $_POST["clave"];
 
-    $sql = "INSERT INTO usuario (nombres, correo, clave, tipo_usuario)
-            VALUES ('$nombre', '$correo', '$clave', 'cliente')";
+    $tipo = $_POST["tipo_usuario"];
+
+        $sql = "INSERT INTO usuario (nombres, correo, clave, tipo_usuario)
+            VALUES ('$nombre', '$correo', '$clave', '$tipo')";
+
 
     if (mysqli_query($conexion, $sql)) {
         $mensaje = "Usuario registrado correctamente.";
@@ -39,6 +42,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <label>Clave:</label><br>
         <input type="password" name="clave" required><br><br>
+
+        <label>Tipo de usuario:</label><br>
+        <select name="tipo_usuario">
+            <option value="comprador">Comprador</option>
+            <option value="vendedor">Vendedor</option>
+        </select>
+        <br><br>
+
 
         <button type="submit">Registrarse</button>
     </form>
