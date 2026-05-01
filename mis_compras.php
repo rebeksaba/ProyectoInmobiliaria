@@ -22,6 +22,8 @@ $resultado = mysqli_query($conexion, $sql);
 <head>
     <meta charset="UTF-8">
     <title>Mis compras</title>
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
     <h1>Mis pisos comprados</h1>

@@ -43,6 +43,8 @@ if (mysqli_query($conexion, $sql_compra)) {
 <head>
     <meta charset="UTF-8">
     <title>Compra realizada</title>
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
     <h1><?php echo $mensaje; ?></h1>
