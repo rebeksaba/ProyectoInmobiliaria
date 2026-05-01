@@ -18,8 +18,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["nombre"] = $usuario["nombres"];
         $_SESSION["tipo"] = $usuario["tipo_usuario"];
 
-        header("Location: privado.php");
+        if ($usuario["tipo_usuario"] == "administrador") {
+            header("Location: admin.php");
+        } elseif ($usuario["tipo_usuario"] == "vendedor") {
+            header("Location: vendedor.php");
+        } else {
+            header("Location: privado.php"); // comprador
+        }
         exit();
+
     } else {
         $mensaje = "Correo o clave incorrectos.";
     }
